@@ -1,13 +1,12 @@
 # ZTM Gdańsk - Home Assistant Integration
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![GitHub Release](https://img.shields.io/github/release/TWOJ_USERNAME/ztm-gdansk.svg)](https://github.com/TWOJ_USERNAME/ztm-gdansk/releases)
-[![License](https://img.shields.io/github/license/TWOJ_USERNAME/ztm-gdansk.svg)](LICENSE)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/TWOJ_USERNAME/ztm-gdansk/graphs/commit-activity)
+[![GitHub Release](https://img.shields.io/github/release/patryk-kalkowski/ztm-gdansk.svg)](https://github.com/patryk-kalkowski/ztm-gdansk/releases)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/patryk-kalkowski/ztm-odjazdy/graphs/commit-activity)
 
 Integracja Home Assistant umożliwiająca monitorowanie odjazdów autobusów i tramwajów ZTM Gdańsk w czasie rzeczywistym.
 
-![Screenshot](https://raw.githubusercontent.com/TWOJ_USERNAME/ztm-gdansk/main/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/patryk-kalkowski/ztm-gdansk/main/images/screenshot.png)
 
 ## Funkcje
 
