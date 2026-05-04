@@ -1,0 +1,19 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Konfiguracja Przystanku ZTM",
+        "description": "Wybierz przystanek i skonfiguruj filtry.",
+        "data": {
+          "stop_id": "Wybierz przystanek",
+          "lines": "Filtruj linie (np. 115; 174 lub puste)",
+          "update_interval": "Interwał odświeżania (minuty, min. 1)",
+          "max_minutes": "Pokaż odjazdy w ciągu (minut)"
+        }
+      }
+    },
+    "error": {
+      "invalid_interval": "Minimalny czas odświeżania to 1 minuta!"
+    }
+  }
+}

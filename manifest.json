@@ -1,0 +1,10 @@
+{
+  "domain": "ztm_odjazdy",
+  "name": "ZTM Odjazdy",
+  "documentation": "https://github.com/patryk-kalkowski/ztm_odjazdy",
+  "dependencies": [],
+  "codeowners": ["@patryk-kalkowski"],
+  "version": "1.0.0",
+  "iot_class": "cloud_polling",
+  "config_flow": true
+}

@@ -1,0 +1,5 @@
+DOMAIN = "ztm_odjazdy"
+CONF_STOPS = "stops"
+CONF_STOP_ID = "stop_id"
+CONF_LINES = "lines"
+BASE_URL = "https://ckan2.multimediagdansk.pl/departures?stopId="
