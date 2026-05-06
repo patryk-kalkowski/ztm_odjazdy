@@ -50,71 +50,49 @@
 ```yaml
 type: custom:flex-table-card
 entities:
-  - sensor.ztm_odjazdy
-max_rows: 8
-sort_by: +sort_time
-disable_header_sort: true
+  - sensor.piotrkowska_03
+  - sensor.piotrkowska_01
+sort_by: czas
+strict: true
 css:
   tbody td:
-    padding: 0px 8px
+    padding: 2px 8px
     font-size: 14px
     border-bottom: 1px solid rgba(127,127,127,0.18)
   tbody tr:nth-child(even):
     background: rgba(127,127,127,0.06)
 columns:
   - name: Linia
-    data: czas_odjazdu.linia
+    data: odjazdy
     align: center
     modify: |
       (() => {
-        const line = String(x);
-
-        const map = {
-          '2':   '#729ddb', 
-          '11':  '#48648c', 
-          '115': '#2F7D6D', 
-          '174': '#1b4d42'  
-        };
-
-        let color = map[line];
-        if (!color) {
-          let hash = 0;
-          for (let i = 0; i < line.length; i++) {
-            hash = line.charCodeAt(i) + ((hash << 5) - hash);
-            hash |= 0;
-          }
-          const hue = Math.abs(hash) % 360;
-          color = `hsl(${hue} 28% 38%)`; // jeszcze mniej jaskrawe
-        }
-
-        return `<span style="
-          display:inline-block;
-          min-width:2.8em;
-          text-align:center;
-          padding: 2px 8px;
-          border-radius:99px;
-          background:${color};
-          color:rgba(255,255,255,0.95);
-          font-weight:700;
-        ">${line}</span>`;
+        const line = String(x.linia);
+        const map = { '2': '#729ddb', '11': '#48648c', '115': '#2F7D6D', '174': '#1b4d42' };
+        let color = map[line] || `hsl(${Math.abs(line.split('').reduce((a,b)=>(((a<<5)-a)+b.charCodeAt(0)),0)) % 360} 28% 38%)`;
+        return `<span style="display:inline-block; min-width:2.8em; text-align:center; padding: 2px 8px; border-radius:99px; background:${color}; color:white; font-weight:700;">${line}</span>`;
       })()
+  - name: Kierunek
+    data: odjazdy
+    modify: x.kierunek
   - name: Godz.
-    data: czas_odjazdu.czas_odjazdu
+    data: odjazdy
     align: center
-    modify: new Date(x).toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit'})
+    modify: >-
+      new
+      Date(x.czas).toLocaleTimeString('pl-PL',{hour:'2-digit',minute:'2-digit'})
   - name: Za
-    data: czas_odjazdu.czas_odjazdu
+    data: odjazdy
     align: right
     modify: |
       (() => {
-        const min = Math.max(0, Math.round((new Date(x) - new Date())/60000));
+        const min = Math.max(0, Math.round((new Date(x.czas) - new Date()) / 60000));
         return min <= 0 ? 'teraz' : `${min} min`;
       })()
-  - id: sort_time
-    name: Sort
-    data: czas_odjazdu.czas_odjazdu
+  - name: czas
+    data: odjazdy
+    modify: x.czas
     hidden: true
-
 ```
 
 ## 📈 Atrybuty sensora
