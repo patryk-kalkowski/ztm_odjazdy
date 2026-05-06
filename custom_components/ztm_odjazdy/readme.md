@@ -1,16 +1,16 @@
-# ZTM Gdańsk - Home Assistant Integration
+
+# <img src="brand/icon.png" width="35" height="35" style="vertical-align: middle;"> ZTM Gdańsk - Home Assistant Integration
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![GitHub Release](https://img.shields.io/github/release/patryk-kalkowski/ztm-gdansk.svg)](https://github.com/patryk-kalkowski/ztm-gdansk/releases)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/patryk-kalkowski/ztm-odjazdy/graphs/commit-activity)
+[![GitHub Release](https://img.shields.io/github/release/patryk-kalkowski/ztm_odjazdy.svg)](https://github.com/patryk-kalkowski/ztm_odjazdy/releases)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/patryk-kalkowski/ztm_odjazdy/graphs/commit-activity)
 
-Integracja Home Assistant umożliwiająca monitorowanie odjazdów autobusów i tramwajów ZTM Gdańsk w czasie rzeczywistym.
 
-![Screenshot](https://raw.githubusercontent.com/patryk-kalkowski/ztm-gdansk/main/images/screenshot.png)
+![CARD_EXAMPLE](https://raw.githubusercontent.com/patryk-kalkowski/ztm_odjazdy/main/brand/card_example.png)
 
 ## Funkcje
 
-- **Śledzenie odjazdów w czasie rzeczywistym** - dane z oficjalnego API ZTM Gdańsk
+- **Śledzenie odjazdów w czasie rzeczywistym** - dane z oficjalnego  [API ZTM Gdańsk](https://ckan.multimediagdansk.pl/dataset/tristar).
 
 
 ## Instalacja
@@ -18,9 +18,9 @@ Integracja Home Assistant umożliwiająca monitorowanie odjazdów autobusów i t
 ### HACS (Rekomendowane)
 
 1. Otwórz HACS w Home Assistant
-2. Kliknij na "Integrations"
+2. Kliknij na "Menu"
 3. Kliknij menu w prawym górnym rogu i wybierz "Custom repositories"
-4. Dodaj URL: `https://github.com/patryk-kalkowski/ztm-odjazdy`
+4. Dodaj URL: `https://github.com/patryk-kalkowski/ztm_odjazdy`
 5. Kategoria: `Integration`
 6. Kliknij "Add"
 7. Znajdź "ZTM Odjazdy" na liście i kliknij "Download"
@@ -35,12 +35,12 @@ Integracja Home Assistant umożliwiająca monitorowanie odjazdów autobusów i t
 
 1. Przejdź do **Ustawienia** → **Urządzenia i usługi**
 2. Kliknij przycisk **+ DODAJ INTEGRACJĘ**
-3. Wyszukaj **ZTM Gdańsk**
+3. Wyszukaj **ZTM Odjazdy**
 4. Postępuj zgodnie z instrukcjami w kreatorze konfiguracji:
-   - **Friendly Name**: Przyjazna nazwa (np. `Przystanek Dworcowa`)
-   - **Lines** (opcjonalne): Lista linii oddzielona średnikami (np. `2;11;115`)
-   - **Update Interval**: Częstotliwość aktualizacji w minutach (domyślnie: 2)
-   - **Max Minutes**: Maksymalny czas do odjazdu w minutach (domyślnie: 50)
+   - **Wybierz przystanek**: Lista przystanków pobierana z API ZTM
+   - **Filtruj linie** (opcjonalne): Lista linii oddzielona średnikami (np. `2;11;115`)
+   - **Interwał odświeżania**: Częstotliwość aktualizacji w minutach (domyślnie, minimalnie: 1)
+   - **Odjazdy w ciągu**: Maksymalny czas do odjazdu w minutach (domyślnie: 50)
 
 ## Przykład użycia w Lovelace
 
@@ -119,7 +119,7 @@ columns:
 
 ## 📈 Atrybuty sensora
 
-Każdy sensor ZTM Gdańsk udostępnia następujące atrybuty:
+Każdy sensor ZTM Odjazdy udostępnia następujące atrybuty:
 
 | Atrybut | Opis |
 |---------|------|
@@ -143,9 +143,9 @@ Każdy sensor ZTM Gdańsk udostępnia następujące atrybuty:
 
 ## Podziękowania
 
-- Dane dostarczane przez [API ZTM Gdańsk](https://ckan2.multimediagdansk.pl/)
+- Dane dostarczane przez [API ZTM Gdańsk](https://ckan.multimediagdansk.pl/dataset/tristar)
 
 
 ## Wsparcie projektu
 
-Jeśli podoba Ci się ta integracja, zostaw gwiazdkę na GitHub! ⭐
+Jeśli podoba Ci się ta integracja, zostaw gwiazdkę na GitHub!
